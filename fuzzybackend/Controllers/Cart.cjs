@@ -156,4 +156,34 @@ const updateCart = async (req, res) => {
     }
 };
 
-module.exports = { addToCart, getCart, removeFromCart, updateCart };
+      //clear cart
+      const clearCart = async (req, res) => {
+        const { email } = req.body; // Ensure the request contains the user's email
+    
+        try {
+            // Find the user by email
+            const user = await User.findOne({ email });
+            if (!user) {
+                return res.status(404).json({ success: false, message: "User not found" });
+            }
+    
+            // Clear the user's cart
+            user.cart = []; // Set the cart to an empty array
+            await user.save(); // Save the updated user document
+    
+            return res.status(200).json({
+                success: true,
+                message: "Cart cleared successfully",
+                cart: user.cart, // Respond with the cleared cart (empty array)
+            });
+        } catch (error) {
+            console.error("Error clearing cart:", error);
+            return res.status(500).json({
+                success: false,
+                message: "Failed to clear cart",
+            });
+        }
+    };
+    
+
+module.exports = { addToCart, getCart, removeFromCart, updateCart ,clearCart};

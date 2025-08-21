@@ -32,8 +32,16 @@
     border-bottom: 0.5px solid grey;
 }
 
+.hidden-radio-container label{
+    font-family: Courier Prime;
+    font-size: 2.2vh;
+}
+
 .aside-category p {
     color: #fff;
+    font-family: Courier Prime;
+    font-size: 2.2vh;
+
 }
 
 .aside-category-hidden {
@@ -153,6 +161,7 @@
     justify-content: center;
     width: 80%;
     margin: auto;
+    font-family: Courier Prime;
 }
 
 .product-cart-button:focus {
@@ -228,9 +237,15 @@
 
   .ulmodel{
     padding: 0.35vh 3vh;
+    font-family: Courier Prime;
+  }
+
+  .emailkiclass{
+    font-family: Courier Prime;
   }
   .limodel{
     padding: 0.25vh;
+    font-family: Courier Prime;
   }
   .modal-content {
     background: white;
@@ -247,38 +262,42 @@
     font-size: 2.7vh;
     font-weight: 800;
     padding: 1vh 0vh;
+    font-family: Quattrocento;
   }
   
   .modal-content textarea {
     width: 100%;
     margin: 25px 0;
     /* border: none; */
-    padding: 2vh;
-    border-radius: 1.2vh;
+    padding: 3vh;
+    border-radius: 2vh;
     /* border: none; */
     outline: none;
+    resize: none;
 }
-  
+
  .feedbacksubmit{
     padding: 2vh;
     border-radius: 3vh;
     border: none;
-    background-color: saddlebrown;
+    background-color: #623a1d;
     color: white;
     font-size: 1.9vh;
-    font-weight: 650;
+    font-weight: 500;
+    font-family: Courier Prime;
+
  }
 
  .closebutton{
     padding: 2vh 4.2vh;
     border-radius: 3vh;
     border: none;
-    background-color: saddlebrown;
+    background-color: #623a1d;
     color: white;
-    font-size: 1.9vh;
-    font-weight: 650;
+    font-size: 2vh;
+    font-weight: 500;
     margin-left: 6vh;
-
+    font-family: Courier Prime;
  }
 
 

@@ -455,6 +455,7 @@ footer{
     border-bottom-right-radius: 5px;
     border: none; 
     background-color: #efab90;  
+    cursor: pointer;
   }
  
   .img-dog-footer{

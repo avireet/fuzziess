@@ -1,8 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Quattrocento:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alef:wght@400;700&family=League+Spartan:wght@100..900&display=swap');
+
 .billing-container {
   padding: 20px;
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   font-family: Arial, sans-serif;
+  min-height: 70.3vh;
+  background-color: #CAC0B5;
+}
+
+.billing-container h1{
+  font-family: Quattrocento;
 }
 
 .billing-cards {
@@ -22,8 +33,14 @@
   margin: 10px;
 }
 
+.noBill{
+  text-align: center;
+}
+
 .billing-card h3 {
   margin-top: 0;
+  font-family: Quattrocento;
+  font-size: 3.5vh;
 }
 
 .billing-details {
@@ -40,11 +57,17 @@
 .billing-item strong {
   font-weight: bold;
   margin-bottom: 5px;
+  font-family: Quattrocento;
+}
+
+.billing-item p{
+  font-family: Courier Prime;
 }
 
 .billing-item a {
   color: #007bff;
   text-decoration: none;
+  font-family: Courier Prime;
 }
 
 .billing-item a:hover {

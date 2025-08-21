@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Quattrocento:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alef:wght@400;700&family=League+Spartan:wght@100..900&display=swap');
+
+
 /* Cart Card Container */
 .cart-card {
     display: flex; /* Ensure horizontal layout */
@@ -11,8 +17,18 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease-in-out;
     flex-direction: column; /* Keep elements in a horizontal line */
-    width: 90%;
+    width: 50%;
     row-gap: 10px;
+}
+
+.product-image-name h3{
+    font-family: Quattrocento;
+    font-size: 3vh;
+}
+
+.product-image-name p{
+    font-family: Courier Prime;
+    font-size: 2vh;
 }
 
 .product-image-name{
@@ -83,32 +99,20 @@
 }
 
 .quantity-controls button:hover {
-    background-color: #CAC0B5;
     transform: scale(1.1);
 }
 
-.quantity-controls button:active {
-    background-color: #3e8e41;
-    transform: scale(0.95);
-}
+
 
 /* Remove Button */
 .remove-button {
-    background-color: #7a6754;
-    color: #fff;
+    padding: 10.2px 16px;
+    background-color: #938372;
+    /* font-family: Courier Prime; */
+    outline: none;
+    color: white;
     border: none;
-    border-radius: 8px;
-    padding: 8px 16px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.remove-button:hover {
-    background-color: #CAC0B5;
-}
 
-.remove-button:active {
-    background-color: #CAC0B5;
-    transform: scale(0.95);
-}
+

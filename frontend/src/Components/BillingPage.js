@@ -66,7 +66,7 @@ const BillingPage = () => {
                     ))}
                 </div>
             ) : (
-                <p>No billing information available.</p>
+                <p className="noBill">No billing information available.</p>
             )}
         </div>
     );

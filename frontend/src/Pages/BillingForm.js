@@ -67,6 +67,7 @@ const BillingForm = ({ setPaymentReceipt = () => {}, setShipmentDetails = () => 
     };
 
     return (
+        <div className="billing-container-details">
         <div className="billing-form-container">
             <h2 className="form-title">Billing Details</h2>
             <form className="billing-form" onSubmit={handleSubmit}>
@@ -134,6 +135,7 @@ const BillingForm = ({ setPaymentReceipt = () => {}, setShipmentDetails = () => 
                     Submit Billing Info
                 </button>
             </form>
+        </div>
         </div>
     );
 };

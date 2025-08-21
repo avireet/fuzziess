@@ -156,15 +156,15 @@ const ProductsPage = () => {
             <div className="aside-category-hidden product-show">
               <div className="hidden-radio-container">
                 <input type="radio" name="price" onChange={() => handleFilterChange("price", "under50")} />
-                <label>Under $50</label>
+                <label>Under ₹50</label>
               </div>
               <div className="hidden-radio-container">
                 <input type="radio" name="price" onChange={() => handleFilterChange("price", "50to100")} />
-                <label>$50 - $100</label>
+                <label>₹50 - ₹100</label>
               </div>
               <div className="hidden-radio-container">
                 <input type="radio" name="price" onChange={() => handleFilterChange("price", "over100")} />
-                <label>Over $100</label>
+                <label>Over ₹100</label>
               </div>
             </div>
           )}
@@ -204,7 +204,7 @@ const ProductsPage = () => {
                 <h2>{product.name}</h2>
                 <div className="paragraphs-product">
                   <p>{product.description}</p>
-                  <p>Price: ${product.price.toFixed(2)}</p>
+                  <p>Price: ₹{product.price.toFixed(2)}</p>
                   <p>Rating: {product.rating}</p>
                 </div>
                 <button className="product-cart-button" onClick={() => handleAddToCart(product)}>
@@ -228,7 +228,7 @@ const ProductsPage = () => {
             <ul className="ulmodel">
               {modalProduct.feedbacks.map((fb, index) => (
                 <li className="limodel" key={index}>
-                  <strong>{fb.userEmail}:</strong> {fb.feedback} 
+                  <strong className="emailkiclass">{fb.userEmail}:</strong> {fb.feedback} 
                 </li>
               ))}
             </ul>

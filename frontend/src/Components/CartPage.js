@@ -47,11 +47,22 @@ const CartPage = () => {
         setTotalAmount(total); // Set total amount in state
     };
 
-    // Clear cart data
-    const clearCart = () => {
-        setCart([]); // Clear cart items
-        setTotalAmount(0); // Reset total amount
-        toast.success('Cart has been cleared!');
+    // Clear cart data (Frontend + Backend synchronization)
+    const clearCart = async () => {
+        try {
+            const response = await axios.post('http://localhost:2151/api/cart/clearCart', { email });
+            if (response.data.success) {
+                setCart([]); // Clear cart state locally
+                setTotalAmount(0); // Reset total amount
+                console.log('Cart cleared successfully on server and frontend.');
+                toast.success('Cart has been cleared!');
+            } else {
+                throw new Error('Failed to clear cart on the server.');
+            }
+        } catch (error) {
+            console.error('Error clearing cart:', error);
+            toast.error('Error clearing cart. Please try again.');
+        }
     };
 
     // Handle Stripe payment token and shipment details
@@ -65,35 +76,29 @@ const CartPage = () => {
                 postcode: token.card.billing_address_zip || 'Not Available',
                 phone: token.card.billing_address_country || 'Not Available',
             };
-    
+
             setShipmentDetails(shipmentDetails); // Save shipment details in state
-    
+             // Fix amount calculation
+        const roundedAmount = Math.round(totalAmount * 100); // Convert to paise/cents
+
             // Stripe payment API request
             const response = await axios.post('http://localhost:2151/api/payment/checkout', {
                 token: token.id,
-                amount: totalAmount * 100, // Amount in cents for Stripe
+                amount: roundedAmount, // Amount in cents for Stripe
                 currency: 'INR',
             });
-    
-            // Log totalAmount and payment receipt
-            console.log("Total Amount:", totalAmount); // Debug total amount
-            console.log("Payment Receipt URL:", response.data.receiptUrl); // Debug payment receipt URL
-    
+
             if (response.status === 200 && response.data.success) {
-                // Save billing details after successful payment
-                await axios.post('http://localhost:2151/api/billing', {
-                    email,
-                    shipmentDetails,
-                    totalAmount,
-                    paymentReceipt: response.data.receiptUrl,
-                });
-    
-                clearCart(); // Clear the cart
+              
+                 await clearCart(); // Clear the cart
                 setPaymentSuccess(true);
                 toast.success('Payment Successful!');
+
                 navigate('/form', {
-                    state: { paymentReceipt: response.data.receiptUrl, // Payment receipt URL
-        totalAmount: totalAmount,    }, // Navigate with the order ID
+                    state: {
+                        paymentReceipt: response.data.receiptUrl, // Payment receipt URL
+                        totalAmount: totalAmount,
+                    },
                 });
             } else {
                 throw new Error('Payment failed');
@@ -103,8 +108,6 @@ const CartPage = () => {
             toast.error('Payment failed! Please try again.');
         }
     };
-    
-    
 
     // Remove item from cart
     const removeFromCart = async (productId) => {
@@ -158,6 +161,9 @@ const CartPage = () => {
                 {cart.length > 0 ? (
                     <div className="checkout cart-items">
                         <h2 className="shopping-cart">Your Shopping Cart</h2>
+                        <div className="cart-items-container">
+                        <div className='cart-div'>
+                        
                         {cart.map((item) => (
                             <CartCard
                                 key={item._id}
@@ -166,11 +172,13 @@ const CartPage = () => {
                                 updateCartQuantity={updateCartQuantity} // Pass the update function as a prop
                             />
                         ))}
+                         </div>
+<div className='aside-cart'>
                         <div className="total-amount">
                             <h3>Total: ₹{totalAmount.toFixed(2)}</h3>
                         </div>
 
-                         <StripeCheckout
+                        <StripeCheckout
                             stripeKey="pk_test_51QRqmdAyGJh6v8kKbXdiwTGWQ9hcqVvYJgFkTPcJ6D9rLxcqjWlMzmnntA66J4jJcvlZH6PHOge4qXowbxyCBVMo001Azf7VzO"
                             token={handleToken}
                             amount={totalAmount * 100} // Stripe requires amount in cents
@@ -181,6 +189,8 @@ const CartPage = () => {
                         >
                             <button className="buy-now-button">Buy Now</button>
                         </StripeCheckout>
+                        </div>
+                        </div>
                     </div>
                 ) : (
                     <div className="checkout empty-cart">

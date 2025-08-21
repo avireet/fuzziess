@@ -11,7 +11,6 @@ const AdminDashboard = () => {
         category: '',
         rating: '',
         images: '',
-        producttype:'',
     });
     const [editingProductId, setEditingProductId] = useState(null);
     const [feedbackMessage, setFeedbackMessage] = useState('');
@@ -64,7 +63,6 @@ const AdminDashboard = () => {
             price: product.price, 
             category: product.category.name, 
             rating: product.rating,
-            producttype:product.producttype,
             images: product.images.join(', ')
         });
         setEditingProductId(product._id);
@@ -110,10 +108,6 @@ const AdminDashboard = () => {
                 <div className="form-group">
                     <label>Image URLs (comma separated):</label>
                     <input name="images" value={formData.images} onChange={handleChange} required />
-                </div>
-                <div className="form-group">
-                    <label>Product Type:</label>
-                    <input name="producttype" value={formData.producttype} onChange={handleChange} type="String" required />
                 </div>
                 <button type="submit" className="submit-button">
                     {editingProductId ? 'Update Product' : 'Create Product'}

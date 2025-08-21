@@ -1,18 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Quattrocento:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alef:wght@400;700&family=League+Spartan:wght@100..900&display=swap');
+
 .profile-main{
     background-color: #CAC0B5;
     padding: 20px;
+    height: 70.3vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .profile-container {
-    max-width: 800px; /* Increase the container width for more space */
-    margin: auto;
+    /* max-width: 60%; */
+    /* margin: auto; */
     padding: 30px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    background-color: #996A58;
+    background-color: #623524;
     color: white;
-    display: flex;
+    display: flex
+;
     justify-content: space-between;
+    width: 58%;
+    height: 85%;
 }
 
 .profile-header {
@@ -41,18 +53,22 @@
 .profile-username {
     font-size: 24px;
     font-weight: bold;
+    font-family: Quattrocento;
 }
 
 .profile-details {
-    display: flex;
+    display: flex
+;
     flex-direction: column;
     align-items: start;
     gap: 12px;
-    width: 40%;
+    width: 45%;
+    justify-content: center;
 }
 
 .profile-details p {
     font-size: 16px;
+    font-family: Courier Prime;
 }
 
 .profile-error-message {
@@ -62,38 +78,59 @@
 }
 
 .edit-button-profile {
-    /* height: 40px; */
-    width: 20%;
-    padding: 5px;
-    border-radius: 5px;
-    border: none;
-    background-color: #efab90;
-    font-size: 14px;
-    /* margin: auto; */
-    text-align: center;
-    font-weight: 600;
+    padding: 10.2px 16px;
+    background-color: #996a58;
+    font-family: Courier Prime;
 }
 
 .profile-save-button {
-    background-color: #b9b78a;
-    border: none;
-    font-weight: 700;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
+    padding: 10.2px 16px;
+    background-color: #996a58;
+    font-family: Courier Prime;
 }
 
 .profile-cancel-button {
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    background-color: #aa9b8b;
+    padding: 10.2px 16px;
+    background-color: #171615;
+    font-family: Courier Prime;
+}
+
+.profile-upload-button {
+    /* border-radius: 20px; */
+    padding: 10.2px 16px;
+    background-color: #996a58;
+    font-family: Courier Prime;
+}
+
+.upload-button-profile {
+    border-radius: 2px;
+    padding: 12.2px 16px;
+    background-color: #171615;
+    font-family: Courier Prime;
     border: none;
-    font-weight: 800;
     color: white;
+    /* margin-top: 5px; */
+}
+
+.MulterPhoto{
+    padding-top: 1.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-details-fontFamily{
+    font-family: Quattrocento;
+}
+
+.profile-details input {
+    padding: 2px 12px;
+    outline: none;
+}
+
+.profile-details select{
+    padding: 2px 12px;
+    outline: none;
 }
 
 

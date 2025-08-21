@@ -3,12 +3,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Quattrocento:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alef:wght@400;700&family=League+Spartan:wght@100..900&display=swap');
 
-.main-color{
+/* .main-color{
     height:20px;
     background-color: #CAC0B5;
     z-index: 5;
     position: relative;
-}
+} */
 
 .checkout{
   background-color: #CAC0B5;
@@ -16,9 +16,18 @@
 }
 
 .cartPage-container{
-    height: 67.5vh;
-    /* padding: 3%; */
+    min-height: 70.3vh;
+    background-color: #CAC0B5;
     /* display: flex; */
+    width: 100%;
+}
+
+.cart-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+width: 70vw;
 }
 
 .shopping-cart{
@@ -35,7 +44,7 @@
 }
 
 .cart-items{
-  width: 40%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -86,8 +95,38 @@
     padding: 13px 25px;
     border-radius: 20px;
     border: none;
-  background-color: #21211f;
+    background-color: #56453a;
   color: white;
   font-family: Courier prime;
   font-size: 16px;
   }
+
+  .cart-items-container{
+    display: flex;
+  }
+
+
+  .aside-cart{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70.3vh;
+    position: sticky;
+    top: 29.7vh;
+  }
+
+  .buy-now-button{
+    padding: 10.2px 16px;
+    background-color: #996a58;
+    font-family: Courier Prime;
+    outline: none;
+    color: white;
+    border: none;
+  }
+
+  .total-amount h3{
+    font-family: Quattrocento;
+  }
+  

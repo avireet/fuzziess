@@ -14,7 +14,6 @@ const productSchema = new mongoose.Schema({
   description: { type: String, required: true },
   rating:{type:Number,required:true},
   images: [{ type: String }],
-  producttype:{type: String,required:true},
   feedbacks: [feedbackSchema], // Embed feedback here
 });
 

@@ -1,11 +1,21 @@
-.billing-form-container {
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Quattrocento:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alef:wght@400;700&family=League+Spartan:wght@100..900&display=swap');
+
+.billing-container-details{
     width: 100%;
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
+    height: 75vh;
+    background-color: #CAC0B5;
+}
+.billing-form-container {
+    max-width: 30%;
+    margin: 0px auto;
+    padding: 19px 37px;
+    background-color: #996a58;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+    height: 98%;
 }
 
 .form-title {
@@ -13,6 +23,7 @@
     font-size: 2rem;
     margin-bottom: 20px;
     color: #333;
+    font-family: Quattrocento;
 }
 
 .billing-form {
@@ -30,6 +41,8 @@
     font-weight: bold;
     margin-bottom: 8px;
     font-size: 1rem;
+    font-family: Courier Prime;
+   
 }
 
 .form-input {
@@ -48,17 +61,15 @@
 .form-button {
     padding: 12px 20px;
     font-size: 1.1rem;
-    background-color: #996A58;
+    background-color: #0d0b0a;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-family: Courier Prime;
 }
 
-.form-button:hover {
-    background-color: #996A58;
-}
 
 @media screen and (max-width: 768px) {
     .billing-form-container {

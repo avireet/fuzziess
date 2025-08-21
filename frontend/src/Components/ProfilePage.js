@@ -136,7 +136,9 @@ const ProfilePage = () => {
                         backgroundImage: `url(${user.URL || 'https://via.placeholder.com/150'})`, 
                     }}
                 ></div>
+                <div className="profile-username">{user.name}</div> 
                  {/* Hidden file input */}
+                 <div className='MulterPhoto'>
                  <input
                         type="file"
                         accept="image/*"
@@ -149,19 +151,36 @@ const ProfilePage = () => {
                         Add Profile Picture
                     </label>
                     {/* Upload button */}
-                    <button onClick={handleUpload}>
+                    <button onClick={handleUpload} className='upload-button-profile'>
                         Upload
                     </button>
-                <div className="profile-username">{user.name}</div> 
+                 </div>
+                 
+                
             </div>
             <div className="profile-details">
-                <p><strong>Full Name:</strong> {isEditing ? <input type="text" value={name} onChange={(e) => setName(e.target.value)} /> : user.name}</p>
-                <p><strong>Mobile Number:</strong> {isEditing ? <input type="text" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} /> : user.phoneNumber}</p>
-                <p><strong>Email ID:</strong> {user.email}</p>
-                <p><strong>Gender:</strong> {isEditing ? <input type="text" value={gender} onChange={(e) => setGender(e.target.value)} /> : (user.gender || '- not added -')}</p>
-                <p><strong>Date of Birth:</strong> {isEditing ? <input type="text" value={dob} onChange={(e) => setDob(e.target.value)} /> : (user.dob || '- not added -')}</p>
-                <p><strong>Location:</strong> {isEditing ? <input type="text" value={location} onChange={(e) => setLocation(e.target.value)} /> : (user.location || '- not added -')}</p>
-                <p><strong>Alternate Mobile:</strong> {isEditing ? <input type="text" value={alternatePhone} onChange={(e) => setAlternatePhone(e.target.value)} /> : (user.alternatePhone || '- not added -')}</p>
+                <p><strong className='profile-details-fontFamily'>Full Name :</strong> {isEditing ? <input type="text" value={name} onChange={(e) => setName(e.target.value)} /> : user.name}</p>
+                <p><strong className='profile-details-fontFamily'>Mobile Number :</strong> {isEditing ? <input type="text" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} /> : user.phoneNumber}</p>
+                <p><strong className='profile-details-fontFamily'>Email ID :</strong> {user.email}</p>
+                <p>
+  <strong className="profile-details-fontFamily">Gender : </strong>
+  {isEditing ? (
+    <select value={gender} onChange={(e) => setGender(e.target.value)}>
+      <option value="" disabled>
+        Select Gender
+      </option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="non-binary">Non-binary</option>
+      <option value="prefer-not-to-say">Prefer not to say</option>
+    </select>
+  ) : (
+    user.gender || '- not added -'
+  )}
+</p>
+                <p><strong className='profile-details-fontFamily'>Date of Birth :</strong> {isEditing ? <input type="date" value={dob} onChange={(e) => setDob(e.target.value)} /> : (user.dob || '- not added -')}</p>
+                <p><strong className='profile-details-fontFamily'>Location :</strong> {isEditing ? <input type="text" value={location} onChange={(e) => setLocation(e.target.value)} /> : (user.location || '- not added -')}</p>
+                <p><strong className='profile-details-fontFamily'>Alternate Mobile :</strong> {isEditing ? <input type="text" value={alternatePhone} onChange={(e) => setAlternatePhone(e.target.value)} /> : (user.alternatePhone || '- not added -')}</p>
                 
 
                 {!isEditing ? (
