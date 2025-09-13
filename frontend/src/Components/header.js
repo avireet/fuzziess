@@ -12,7 +12,7 @@ const Header = ({ isAuthenticated, isAdmin, onLogout }) => {
     const handleLogoutClick = () => {
         onLogout();
         alert('Logout successful');
-        navigate('/login');
+        navigate('/');
     };
 
     return (
@@ -43,7 +43,7 @@ const Header = ({ isAuthenticated, isAdmin, onLogout }) => {
 
                     <div className='navdivwlogo'>
                         {/* Show CART tab only if isAdmin is false */}
-                        {!isAdmin && (
+                        {!isAdmin && isAuthenticated &&(
                             <li>
                                 <Link to="/cart">
                                     <FaShoppingCart size={19} className='header-icons' aria-hidden="true" />
@@ -52,7 +52,7 @@ const Header = ({ isAuthenticated, isAdmin, onLogout }) => {
                         )}
 
                         {/* Show BILLING tab with icon only if authenticated */}
-                        {isAuthenticated && (
+                        {!isAdmin && isAuthenticated && (
                             <li>
                                 <Link to="/billing" className="billing-link">
                                     <FaFileInvoiceDollar size={19} className='header-icons' aria-hidden="true" /> 
@@ -75,7 +75,7 @@ const Header = ({ isAuthenticated, isAdmin, onLogout }) => {
                                 </button>
                             ) : (
                                 <Link to="/login">
-                                    <FaUserAlt size={16} className='header-icons' aria-hidden="true" />LOGIN
+                                    <FaUserAlt size={16} className='header-icons' aria-hidden="true" />
                                 </Link>
                             )}
                         </li>
