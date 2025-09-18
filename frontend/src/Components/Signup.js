@@ -20,7 +20,7 @@ const SignUp = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post('http://localhost:2151/api/auth/signup', formData);
+      const response = await axios.post('https://fuzziess-vx0m.onrender.com/api/auth/signup', formData);
       console.log('Signup successful:', response.data);
       navigate('/login'); // Redirect to login page after successful signup
     } catch (err) {
