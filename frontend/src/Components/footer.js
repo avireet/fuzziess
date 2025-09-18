@@ -16,7 +16,7 @@ const Footer = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:2151/api/mail/send-email", { email });
+      const response = await axios.post("https://fuzziess-vx0m.onrender.com/api/mail/send-email", { email });
 
       setMessage("Thank you for subscribing! We've sent a confirmation email.");
     } catch (error) {
