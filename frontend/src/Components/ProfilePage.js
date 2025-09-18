@@ -25,7 +25,7 @@ const ProfilePage = () => {
                     return;
                 }
 
-                const res = await axios.get('http://localhost:2151/api/auth/me', {
+                const res = await axios.get('https://fuzziess-vx0m.onrender.com/api/auth/me', {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
