@@ -14,7 +14,7 @@ const Login = ({ onSuccessfulLogin }) => { // Accept onSuccessfulLogin as a prop
     setError(''); // Clear previous errors
 
     try {
-      const response = await axios.post('http://localhost:2151/api/auth/login', {
+      const response = await axios.post('https://fuzziess-vx0m.onrender.com/api/auth/login', {
         email,
         password,
       });
