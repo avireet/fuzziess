@@ -21,7 +21,7 @@ const AdminDashboard = () => {
 
     const fetchProducts = async () => {
         try {
-            const response = await axios.get('http://localhost:2151/api/products');
+            const response = await axios.get('https://fuzziess-vx0m.onrender.com/api/products');
             setProducts(response.data);
         } catch (error) {
             console.error('Error fetching products:', error);
@@ -40,10 +40,10 @@ const AdminDashboard = () => {
             const dataToSend = { ...formData, images: imageUrls };
 
             if (editingProductId) {
-                await axios.put(`http://localhost:2151/api/products/${editingProductId}`, dataToSend);
+                await axios.put(`https://fuzziess-vx0m.onrender.com/api/products/${editingProductId}`, dataToSend);
                 setFeedbackMessage('Product updated successfully!');
             } else {
-                await axios.post('http://localhost:2151/api/products/create', dataToSend);
+                await axios.post('https://fuzziess-vx0m.onrender.com/api/products/create', dataToSend);
                 setFeedbackMessage('Product created successfully!');
             }
 
