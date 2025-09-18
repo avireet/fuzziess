@@ -28,7 +28,7 @@ const ProductsPage = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get(`http://localhost:2151/api/products`, {
+        const response = await axios.get(`https://fuzziess-vx0m.onrender.com/api/products`, {
           params: { categoryNames: categoryName },
         });
         setProducts(response.data);
@@ -83,7 +83,7 @@ const ProductsPage = () => {
         navigate("/login");
         return;
       }
-      const response = await axios.post("http://localhost:2151/api/cart/addToCart", {
+      const response = await axios.post("https://fuzziess-vx0m.onrender.com/api/cart/addToCart", {
         email: user.email,
         productId: product._id,
       });
@@ -120,7 +120,7 @@ const ProductsPage = () => {
       }
 
       const response = await axios.post(
-        `http://localhost:2151/api/products/${modalProduct._id}/feedback`,
+        `https://fuzziess-vx0m.onrender.com/api/products/${modalProduct._id}/feedback`,
         { feedback: newFeedback, userEmail: user.email },
         { headers: { Authorization: `Bearer ${user.token}` } }
       );
