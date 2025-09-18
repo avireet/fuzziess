@@ -23,7 +23,7 @@ const CartPage = () => {
     // Fetch cart data from the backend
     const fetchUserCart = async () => {
         try {
-            const response = await axios.post('http://localhost:2151/api/cart', { email });
+            const response = await axios.post('https://fuzziess-vx0m.onrender.com/api/cart', { email });
             if (response.data.success) {
                 setCart(response.data.cart); // Update cart state with fetched data
                 calculateTotal(response.data.cart); // Calculate total amount
@@ -50,7 +50,7 @@ const CartPage = () => {
     // Clear cart data (Frontend + Backend synchronization)
     const clearCart = async () => {
         try {
-            const response = await axios.post('http://localhost:2151/api/cart/clearCart', { email });
+            const response = await axios.post('https://fuzziess-vx0m.onrender.com/api/cart/clearCart', { email });
             if (response.data.success) {
                 setCart([]); // Clear cart state locally
                 setTotalAmount(0); // Reset total amount
@@ -82,7 +82,7 @@ const CartPage = () => {
         const roundedAmount = Math.round(totalAmount * 100); // Convert to paise/cents
 
             // Stripe payment API request
-            const response = await axios.post('http://localhost:2151/api/payment/checkout', {
+            const response = await axios.post('https://fuzziess-vx0m.onrender.com/api/payment/checkout', {
                 token: token.id,
                 amount: roundedAmount, // Amount in cents for Stripe
                 currency: 'INR',
@@ -112,7 +112,7 @@ const CartPage = () => {
     // Remove item from cart
     const removeFromCart = async (productId) => {
         try {
-            const response = await axios.delete('http://localhost:2151/api/cart/removeFromCart', {
+            const response = await axios.delete('https://fuzziess-vx0m.onrender.com/api/cart/removeFromCart', {
                 data: { email, productId },
             });
             if (response.data.success) {
