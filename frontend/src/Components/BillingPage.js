@@ -11,7 +11,7 @@ const BillingPage = () => {
             const user = JSON.parse(localStorage.getItem("user")); // Retrieve user data
             const email = user ? user.email : null; // Get the email from localStorage
             try {
-                const response = await axios.get(`http://localhost:2151/api/billing?email=${email}`);
+                const response = await axios.get(`https://fuzziess-vx0m.onrender.com/api/billing?email=${email}`);
                 console.log('API Response:', response.data); // Log the entire response
                 setBillingInfo(response.data.billing); // Set all billing records
             } catch (error) {
